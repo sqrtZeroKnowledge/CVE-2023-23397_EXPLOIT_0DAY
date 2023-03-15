@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
+    <Version>2.5.1</Version>
+    <Description>MsgKit is a 100% managed C# .NET library (no PINVOKE or whatsoever) which may be used for the creation of messages (E-Mail, Appointments, Journals and Stickey Notes) that are Outlook compatible</Description>
+    <Authors>Kees van Spelde</Authors>
+    <Company>Kees van Spelde</Company>
+    <Copyright>(C) 2015-2021 Magic-Sessions</Copyright>
+	<PackageProjectUrl>https://github.com/Sicos1977/MsgKit</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <RepositoryUrl>https://github.com/Sicos1977/MsgKit</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Outlook MSG E-mail Appointment</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>- Check if contentId is not null when converting EML to MSG format</PackageReleaseNotes>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MsgKit.snk</AssemblyOriginatorKeyFile>
+    <AssemblyVersion>2.5.1.0</AssemblyVersion>
+    <FileVersion>2.5.1.0</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>Outlook-icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\MsgKit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\MsgKit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\MsgKit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\MsgKit.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45'">
+    <PackageReference Include="MimeKit" Version="2.10.1" />
+    <PackageReference Include="OpenMcdf" Version="2.2.1.9" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="MimeKit" Version="2.6.0" />
+    <PackageReference Include="OpenMcdf" Version="2.2.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MimeKit" Version="3.0.0" />
+    <PackageReference Include="OpenMcdf" Version="2.2.1.9" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="Outlook-icon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+  
+</Project>
